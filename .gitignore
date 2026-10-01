@@ -1,0 +1,15 @@
+# Environment & Secret files
+.env
+.env.backup
+.env.production
+
+# R2 Local Database
+r2_files.sqlite
+
+# Vendor & Dependencies
+/vendor/
+
+# Temporary & Note files containing secrets
+development_note.md
+*.log
+*.tmp
