@@ -1,0 +1,24 @@
+{
+    "name": "jamrul/cloudflare",
+    "description": "A PHP wrapper for managing Cloudflare R2 bucket operations via AWS S3 SDK.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jamrul",
+            "email": "jamrulwithlearn@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "aws/aws-sdk-php": "^3.0",
+        "vlucas/phpdotenv": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jamrul\\Cloudflare\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
