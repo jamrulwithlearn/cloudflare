@@ -1,8 +1,24 @@
 {
-    "name": "jamrul/cloudflare",
-    "description": "A PHP wrapper for managing Cloudflare R2 bucket operations via AWS S3 SDK.",
+    "name": "jamrul/cloudflare-r2",
+    "description": "A lightweight PHP wrapper for Cloudflare R2 object storage built on the AWS S3 SDK. Works with plain PHP and Laravel.",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "cloudflare",
+        "r2",
+        "cloudflare-r2",
+        "object-storage",
+        "s3",
+        "aws-sdk",
+        "storage",
+        "laravel",
+        "php"
+    ],
+    "homepage": "https://github.com/jamrul/cloudflare-r2",
+    "support": {
+        "issues": "https://github.com/jamrul/cloudflare-r2/issues",
+        "source": "https://github.com/jamrul/cloudflare-r2"
+    },
     "authors": [
         {
             "name": "Jamrul",
@@ -10,14 +26,38 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
-        "aws/aws-sdk-php": "^3.0",
-        "vlucas/phpdotenv": "^5.7"
+        "php": "^7.4 || ^8.0",
+        "ext-json": "*",
+        "aws/aws-sdk-php": "^3.300"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6 || ^10.0",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "suggest": {
+        "vlucas/phpdotenv": "Load R2 credentials from a .env file in plain PHP projects.",
+        "illuminate/support": "Required for Laravel integration (service provider / facade)."
     },
     "autoload": {
         "psr-4": {
             "Jamrul\\Cloudflare\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jamrul\\Cloudflare\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jamrul\\Cloudflare\\R2ServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
     },
     "minimum-stability": "stable",
     "prefer-stable": true
